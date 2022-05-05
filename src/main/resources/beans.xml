@@ -8,6 +8,10 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
+<!-- modelo 2 -->
+    <context:component-scan base-package="cl.caelchro.beans"></context:component-scan>
+
+<!--     modelo 1 -->
     <bean id="jugador1" class="cl.caelchro.beans.Jugador">
         <property name="id" value="1"></property>
         <property name="nombre" value="SChispy"></property>
@@ -15,11 +19,8 @@
         <property name="camiseta" ref="camiseta"></property>
     </bean>
     
-    
-    <bean id="barcelona" class="cl.caelchro.beans.Barcelona">
-    </bean>
-    <bean id="juventus" class="cl.caelchro.beans.Juventus">
-    </bean>
+    <bean id="barcelona" class="cl.caelchro.beans.Barcelona"></bean>
+    <bean id="juventus" class="cl.caelchro.beans.Juventus"></bean>
     <bean id="camiseta" class="cl.caelchro.beans.Camiseta">
         <property name="id" value="1"></property>
         <property name="numero" value="10"></property>
