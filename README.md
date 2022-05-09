@@ -13,4 +13,5 @@ Ejecucion como app java, entrada por consola seleccion de equipo (por defecto mu
 3.- AppConfig, modelo:<br>
 &nbsp;&nbsp;&nbsp;Libro -> Autor -> Pais<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Tema
-              
+
+Finalmente se inserta en DB un nuevo autor (sin validación de existencia, sólo para probar conexión), usando antiguo PreparedStatement

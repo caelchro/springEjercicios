@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xsi:schemaLocation="
-           http://www.springframework.org/schema/beans
-           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-           http://www.springframework.org/schema/context
-           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd">
 
 <!-- modelo 2 -->
-    <context:component-scan base-package="cl.caelchro.beans"></context:component-scan>
+    <context:component-scan base-package="cl.caelchro"></context:component-scan>
+
+<!-- agregar archivo properties -->
+    <context:property-placeholder location="classpath:miArchivo.properties"/>
+
+    <bean id="dataBase" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="${db.url}" />
+        <property name="username" value="${db.username}" />
+        <property name="password" value="${db.password}" />
+    </bean>
 
 <!--     modelo 1 -->
     <bean id="jugador1" class="cl.caelchro.beans.Jugador">
@@ -18,7 +27,7 @@
         <property name="equipo" ref="barcelona"></property>
         <property name="camiseta" ref="camiseta"></property>
     </bean>
-    
+
     <bean id="barcelona" class="cl.caelchro.beans.Barcelona"></bean>
     <bean id="juventus" class="cl.caelchro.beans.Juventus"></bean>
     <bean id="camiseta" class="cl.caelchro.beans.Camiseta">
